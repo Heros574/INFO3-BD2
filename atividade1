@@ -1,0 +1,5 @@
+objetivo: buscar as profissionais
+
+ação: Retorna todos os atributos das profissionais do nae cadstradas
+
+["select * from Profissional"]
