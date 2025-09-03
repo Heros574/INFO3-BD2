@@ -1,0 +1,18 @@
+ação: ela sempre que um aluno for atendido vai criar um prontuario
+
+
+CREATE PROCEDURE CriarProntuario (
+    IN p_CPFProfissional VARCHAR(14),
+    IN p_RAAluno CHAR(7),
+    IN p_dataProntuario DATE,
+    IN p_descricao TEXT,
+    IN p_condicaoRestricao TEXT
+)
+BEGIN
+    DECLARE v_IDProntuario INT;
+    INSERT INTO Prontuario (dataProntuario, descricao, condicaoRestricao)
+    VALUES (p_dataProntuario, p_descricao, p_condicaoRestricao);
+    SET v_IDProntuario = LAST_INSERT_ID();
+    INSERT INTO fazProntuario (CPFProfissional, RAaluno, IDprontuario)
+    VALUES (p_CPFProfissional, p_RAAluno, v_IDProntuario);
+END //
