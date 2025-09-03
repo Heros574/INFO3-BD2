@@ -1,5 +1,9 @@
 objetivo: buscar as profissionais
-
+consulta 1
 ação: Retorna todos os atributos das profissionais do nae cadstradas
-
 ["select * from Profissional"]
+
+consulta 2
+ação: retoma todos os Alunos
+["select * from Aluno"]
+
