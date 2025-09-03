@@ -1,5 +1,4 @@
-ação: Seleciona os alunos os responsávei e os trabalhadores que atenderam 
-
+ação: Seleciona os alunos os responsávei e o prontuario
 select  a.nome as nome_aluno, r.nome as nome_responsavel, r.grauParentesco, p.ID as id_prontuario, p.descricao
   from Aluno a
   join alunoPossuiResponsavel ar on a.RA = ar.RAAluno
