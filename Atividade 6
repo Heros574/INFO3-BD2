@@ -1,0 +1,14 @@
+ação: automatiza a inserção da data de criação do prontuario
+
+CREATE TRIGGER set_dataProntuario
+BEFORE INSERT ON Prontuario
+FOR EACH ROW
+BEGIN
+   
+    SELECT 
+        CASE 
+            WHEN NEW.dataProntuario IS NULL 
+            THEN DATE('now') 
+        END
+    INTO NEW.dataProntuario;
+END;
