@@ -1,0 +1,14 @@
+ação : ele fala quantos prontuarios um aluno tem e quantas vezes ele foi atendido
+
+CREATE FUNCTION qtdProntuariosAluno (p_RA CHAR(7))
+RETURNS INT
+BEGIN
+    DECLARE total INT;
+
+    SELECT COUNT(*)
+    INTO total
+    FROM fazProntuario
+    WHERE RAAluno = p_RA;
+
+    RETURN total;
+END;
